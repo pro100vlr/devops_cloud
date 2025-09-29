@@ -1,0 +1,11 @@
+admin
+administrator
+login
+dashboard
+panel
+manage
+manager
+wp-admin
+adminpanel
+cpanel
+txt

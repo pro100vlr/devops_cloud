@@ -1,0 +1,14 @@
+uploads
+files
+images
+static
+staging
+dev
+test
+old
+backup
+uploads/
+files/
+staging/
+dev/
+test/
