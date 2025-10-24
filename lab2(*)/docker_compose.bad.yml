@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest         # Плохая практика: latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    environment:
+      - NGINX_PORT=80
+    user: root                  # Плохая практика: запуск от root
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest      # Плохая практика: latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: testdb
+    volumes:
+      - ./data:/var/lib/postgresql/data
