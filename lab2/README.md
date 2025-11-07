@@ -55,5 +55,32 @@ docker run -d mydb
 
 docker run -d -v /data/db:/var/lib/mysql mydb
 
+Добавлю скриншоты к отчету:
+
+Сборка образа "плохого" докерфайла:
+
+<img width="1876" height="715" alt="image (1)" src="https://github.com/user-attachments/assets/7bdeaf0a-3b63-4bbd-a982-e42e25b402a7" />
+
+Запуск контейнера из плохого образа:
+
+<img width="1356" height="78" alt="image (2)" src="https://github.com/user-attachments/assets/f2990f4d-b0d8-4bc1-b0aa-00b3ee08d358" />
+
+Сборка образа хорошего докерфайла:
+
+<img width="1881" height="645" alt="image (3)" src="https://github.com/user-attachments/assets/35f8eb95-3a61-4fc0-9482-afd5b31e0f44" />
+
+Запуск контейнера хорошего докерфайла:
+
+<img width="1356" height="75" alt="image (4)" src="https://github.com/user-attachments/assets/cd16e38a-326b-452f-a66c-49ab0b9982c3" />
+
+Nginx успешно запускается из обоих контейнеров на портах 8080 и 8081:
+
+<img width="1900" height="629" alt="image (5)" src="https://github.com/user-attachments/assets/3d56a18d-20d7-41e9-ad47-1e07f15e646d" />
+
+<img width="1909" height="580" alt="image (6)" src="https://github.com/user-attachments/assets/f2ad5ae1-cd6f-4671-8ce2-3c1f4b9c0f2c" />
+
+Наглядное сравнение по используемой памяти образов хорошего и плохого докерфайла (колонка SIZE):
+
+<img width="1480" height="122" alt="image (7)" src="https://github.com/user-attachments/assets/64e4b825-9092-443b-b5a7-75055acc325a" />
 
 Вывод: В работе я сравнила “плохой” и “хороший” Dockerfile и на практике увидела, как нарушения базовых практик приводят к избыточному размеру образа, большему числу слоёв, уязвимостям и нестабильным сборкам. После внесённых исправлений сборка стала более стабильной, а безопасность контейнера значительно повысилась. Дополнительно я разобрала ошибки эксплуатации контейнеров и показала, как их избегать. В итоге сформировала чёткое понимание, что качество результата зависит не только от Dockerfile, но и от дисциплины в работе с контейнерами на проде.
