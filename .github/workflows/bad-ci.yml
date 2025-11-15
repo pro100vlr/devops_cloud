@@ -1,0 +1,22 @@
+name: Bad CI Example
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1 
+
+      - name: Install Node via apt  
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm
+
+      - name: Run build
+        run: |
+          npm install
+          npm run build
+          sleep 5  
