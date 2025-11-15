@@ -1,22 +1,19 @@
-name: Bad CI Example
+name: Bad CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest   # Плохая практика: latest, может ломаться при обновлениях
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v1 
-
-      - name: Install Node via apt  
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y nodejs npm
-
+      - uses: actions/checkout@v1   # Устаревшая версия checkout
+      - name: Install Node.js
+        run: sudo apt-get update && sudo apt-get install -y nodejs npm   # Плохая практика: apt-get для Node.js
       - name: Run build
         run: |
-          npm install
-          npm run build
-          sleep 5  
+          echo "Building project..."
+          sleep 5   # Плохая практика: без таймаута/оптимизации
