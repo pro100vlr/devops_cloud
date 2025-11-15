@@ -7,13 +7,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest   # Плохая практика: latest, может ломаться при обновлениях
+    runs-on: ubuntu-latest   
 
     steps:
-      - uses: actions/checkout@v1   # Устаревшая версия checkout
+      - uses: actions/checkout@v1   
       - name: Install Node.js
-        run: sudo apt-get update && sudo apt-get install -y nodejs npm   # Плохая практика: apt-get для Node.js
+        run: sudo apt-get update && sudo apt-get install -y nodejs npm   
       - name: Run build
         run: |
           echo "Building project..."
-          sleep 5   # Плохая практика: без таймаута/оптимизации
+          sleep 5   

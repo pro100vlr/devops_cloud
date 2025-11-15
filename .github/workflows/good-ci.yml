@@ -7,15 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04   # Фиксированная версия ОС
+    runs-on: ubuntu-22.04  
 
     steps:
-      - uses: actions/checkout@v4   # Последняя стабильная версия checkout
+      - uses: actions/checkout@v4   
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'    # Используем встроенный и фиксированный Node.js
+          node-version: '20'    
       - name: Run build
         run: |
           echo "Building project..."
-          timeout 10 bash -c 'sleep 5'  # Демонстрация таймаута
+          timeout 10 bash -c 'sleep 5'  
